@@ -1,0 +1,277 @@
+/* Definición de variables de color */
+:root {
+    --primary-color: #1872d2; 
+    --secondary-color: #6c757d; 
+    --success-color: #28ff5a; 
+    --danger-color: #357a32; 
+}
+
+/* Estilo del cuerpo de la página */
+body {  
+    background-color: #007bff; /* Color de fondo del cuerpo */
+    font-family: 'Arial', sans-serif; /* Fuente general */
+    margin: 0; /* Sin márgenes */
+    padding: 0; /* Sin relleno */
+    color: var(--text-color); 
+    background-image: url(/Imagenes/imagenFront.png);
+    background-size: 50% 100%; /*tamaño de la imagen de fondo*/
+    background-repeat: no-repeat;
+    background-position: right; /*posicion de la imagen*/
+}
+
+.header-text {
+    font-family: 'Mulish', sans-serif; /* Fuente de google */
+    font-size: 60px; /*  tamaño de la fuente */
+    font-weight: bold; /*negrita*/
+    letter-spacing: -6px; /*espaciado entre letras*/
+    margin-left: 20px; /*margen a la izquierda*/
+}
+
+.header-text .letter {
+    display: inline-block; /* Cada letra en un bloque */
+}
+
+/* Colores de cada letra */
+.header-text .letter:nth-child(1) { color: var(--success-color) ; }
+.header-text .letter:nth-child(2) { color: white; }
+.header-text .letter:nth-child(3) { color: var(--success-color); }
+.header-text .letter:nth-child(4) { color: white; }
+    
+
+
+
+
+
+ 
+/* Estilo del contenedor padre */
+.padre {  
+    display: flex; /* Uso de flexbox */
+    justify-content: flex-start; /* Centrar horizontalmente */
+    align-items: flex-start; /* Centrar verticalmente */
+    height: 100vh; /* Altura del viewport */
+    padding: 20px; /* Espaciado interno */
+    margin-top: 100px; /* margen superior*/
+    margin-left: 30px; /* margen izq*/
+}
+
+/* Estilo para los elementos hijos */
+.hijo {  
+    background-color:  rgba(0, 0, 0, 0.5); /* Fondo semi transparente */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 20px; /* Relleno interno */
+    max-width: 800px; /* Ancho máximo */
+    width: 90%; /* Ancho responsivo */
+    transition: transform 0.3s ease; /* Suaviza la transformación */
+      
+}  
+
+/*animacion de entrada*/
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%); /* Comienza fuera de la pantalla a la izquierda */
+        opacity: 0; /* Comienza completamente transparente */
+    }
+    to {
+        transform: translateX(0); /* Termina en su posición original */
+        opacity: 1; /* Termina completamente visible */
+    }
+}
+
+.hijo {
+    animation: slideIn 0.5s ease-out; /* Aplica la animación al elemento */
+}
+
+
+/*estilos para el texto dentro del contenedor*/
+
+.titulo {
+    color: white; /* Color blanco */
+    font-size: 1.5rem; /* Tamaño de fuente para el título */
+    font-weight: bold; /* Negrita */
+    text-align: center; /* Centrar texto */
+}
+
+.subtitulo {
+    color: var(--success-color); /* Color blanco */
+    font-size: 1rem; /* Tamaño de fuente para el subtítulo */
+    font-weight: normal; /* Normal */
+    text-align: center; /* Centrar texto */
+}
+
+.texto {
+    color: #f7faf9; /* Color del texto */
+    font-size: 1rem; /* Tamaño de fuente para el párrafo */
+    text-align: justify; /* Justificar texto */
+    margin: 15px 0; /* Margen vertical */
+}
+
+
+
+
+
+/* Efecto hover para los hijos */
+.hijo .btn {
+    margin-top: 15px; /* Espacio superior para el botón */
+    font-weight: bold; /* Negrita */
+}
+
+
+/* Estilo para la barra lateral */
+.sidebar {
+    position: fixed; /* Fija en la pantalla */
+    top: 0; /* Alineado al top */
+    right: -100%; /* Fuera de la pantalla inicialmente */
+    width: 100%; /* Ocupa toda la pantalla */
+    height: 100%; /* Altura completa */
+    background-color: var(--primary-color); /* Color de fondo de la barra lateral */
+    color: white; /* Color del texto */
+    transition: right 0.3s ease; /* Transición suave al abrir/cerrar */
+    padding: 20px; /* Espaciado interno */
+    z-index: 1000; /* por encima de otros elementos */
+}
+
+/* Clase para mostrar la barra lateral */
+.sidebar.open {
+    right: 0; /* Muestra el menú al cambiar la posición */
+}
+
+/* Estilo para la lista en la barra lateral */
+.sidebar ul {
+    padding: 0; /* Sin relleno */
+    text-align: center;
+    margin-top: 200px;
+}
+
+/* Estilo para los elementos de la lista en la barra lateral */
+.sidebar li {
+    list-style: none; /* Sin viñetas */
+    margin: 10px 0px; /* Margen vertical */
+    text-align: center;
+    font-size: 25px;
+}
+
+/* Estilo para los enlaces en la barra lateral */
+.sidebar a {
+    color: white; /* Color del texto de los enlaces */
+    text-decoration: none; /* Sin subrayado */
+    transition: 0.3s ease; /*Transicion suave para el cambio de color*/
+}
+
+/*Efecto al pasar el cursor*/
+
+.sidebar a:hover {
+    color: #28ff5a;
+}
+
+/* Estilo para el botón del menú */
+.menu-button {  
+    background-color: var(--danger-color); /* Color de fondo del botón */
+    color: white; /* Color del texto */
+     border-radius: 10px ; /* Sin borde */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    position: fixed; /* Fijo en la pantalla */
+    top: 20px; /* Espaciado desde el top */
+    right: 20px; /* Espaciado desde la derecha */
+    z-index: 1001; /* Asegúrate de que esté por encima del menú */
+    
+}
+
+
+
+
+
+.footer {
+    color: white;
+    display: flex; /* Usar flexbox para alinear elementos */
+    justify-content: space-between; /* Espacio entre el texto y los íconos */
+    align-items: center; /* Centrar verticalmente */
+    padding: 10px; /* Reducir el padding */
+    background-color: rgba(14, 215, 88, 0.193);
+    font-weight: bold; /* Negrita */
+}
+
+.contenedor{
+    display: flex; /* Usar flexbox para los íconos */
+    margin-left: 10px; /* Espacio entre el texto y los íconos */
+   
+}
+
+.social-icon{
+    font-size: 20px; /* Ajustar el tamaño del ícono */
+    color: white;
+    margin: 0 10px; /* Espacio entre íconos */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 50%;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estilo específico para Facebook */
+.fa-facebook:hover {
+    background-color: #3b5998 ;
+    color: white; 
+    box-shadow: 0 0 15px #3b5998
+                0 0 45px #3b5998
+                0 0 75px #3b5998
+                0 0 115px #3b5998
+}
+
+
+
+/* Estilo específico para Instagram */
+.fa-instagram:hover {
+    background-color: #e1306c; /* Color de Instagram */
+    color: white; 
+    box-shadow: 0 0 15px #e1306c
+                0 0 45px #e1306c
+                0 0 75px #e1306c
+                0 0 115px #e1306c
+}
+
+
+
+
+
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .hijo {
+        padding: 10px; /* Relleno reducido en pantallas pequeñas */
+    }
+
+    .hijo h1 {
+        font-size: 2rem; /* Tamaño de fuente ajustado */
+    }
+
+    .hijo p {
+        font-size: 1rem; /* Tamaño de fuente ajustado */
+    }
+}
+
+/* Media query para pantallas muy pequeñas */
+@media (max-width: 600px) {  
+    .padre {  
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+    }  
+    .hijo {  
+        width: 90%; /* Aumentar el ancho en pantallas pequeñas */
+        padding: 50px; /* Relleno reducido */
+    }  
+}  
+
+/* Media query para tabletas */
+@media (min-width: 601px) and (max-width: 768px) {  
+    .hijo {  
+        width: 70%; /* Ancho adaptado para tabletas */
+        padding: 80px; /* Relleno ajustado */
+    }  
+}  
+
+
+
+
+        
+     
